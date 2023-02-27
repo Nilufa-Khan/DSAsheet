@@ -4,6 +4,7 @@ public class LinearSearch {
     public static void main(String[] args) {
         int[] arr = {10,2,13,1,6,7,4,5,9};
         int key = 1;
+
         int index = linearSearch(arr,key);
         if(index == -1){
             System.out.println("Element not present");
