@@ -1,0 +1,209 @@
+Bubble sort---> Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in the wrong order.
+Input: arr[] = {5, 1, 4, 2, 8}
+
+First Pass:
+
+Bubble sort starts with very first two elements, comparing them to check which one is greater.
+( 5 1 4 2 8 ) –> ( 1 5 4 2 8 ), Here, algorithm compares the first two elements, and swaps since 5 > 1.
+( 1 5 4 2 8 ) –>  ( 1 4 5 2 8 ), Swap since 5 > 4
+( 1 4 5 2 8 ) –>  ( 1 4 2 5 8 ), Swap since 5 > 2
+( 1 4 2 5 8 ) –> ( 1 4 2 5 8 ), Now, since these elements are already in order (8 > 5), algorithm does not swap them.
+Second Pass:
+Now, during second iteration it should look like this:
+( 1 4 2 5 8 ) –> ( 1 4 2 5 8 )
+( 1 4 2 5 8 ) –> ( 1 2 4 5 8 ), Swap since 4 > 2
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )
+( 1 2 4 5 8 ) –>  ( 1 2 4 5 8 )
+Third Pass:
+
+Now, the array is already sorted, but our algorithm does not know if it is completed.
+The algorithm needs one whole pass without any swap to know it is sorted.
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )
+Follow the below steps to solve the problem:
+
+Run a nested for loop to traverse the input array using two variables i and j, such that 0 ≤ i < n-1 and 0 ≤ j < n-i-1
+If arr[j] is greater than arr[j+1] then swap these adjacent elements, else move on
+Print the sorted array
+
+Worst and Average Case Time Complexity: O(N2). The worst case occurs when an array is reverse sorted.
+Best Case Time Complexity: O(N). The best case occurs when an array is already sorted.
+Auxiliary Space: O(1)
+============================================================================================================
+SELECTION SORT ->  The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order) from the unsorted part and putting it at the beginning.
+
+The algorithm maintains two subarrays in a given array.
+
+The subarray which already sorted.
+The remaining subarray was unsorted.
+Lets consider the following array as an example: arr[] = {64, 25, 12, 22, 11}
+
+First pass:
+
+For the first position in the sorted array, the whole array is traversed from index 0 to 4 sequentially. The first position where 64 is stored presently, after traversing whole array it is clear that 11 is the lowest value.
+   64   	   25   	   12   	   22   	   11
+Thus, replace 64 with 11. After one iteration 11, which happens to be the least value in the array, tends to appear in the first position of the sorted list.
+   11   	   25   	   12   	   22   	   64
+Second Pass:
+
+For the second position, where 25 is present, again traverse the rest of the array in a sequential manner.
+   11   	   25   	   12   	   22   	   64
+After traversing, we found that 12 is the second lowest value in the array and it should appear at the second place in the array, thus swap these values.
+   11   	   12   	   25   	   22   	   64
+Third Pass:
+
+Now, for third place, where 25 is present again traverse the rest of the array and find the third least value present in the array.
+   11   	   12   	   25   	   22   	   64
+While traversing, 22 came out to be the third least value and it should appear at the third place in the array, thus swap 22 with element present at third position.
+   11   	   12   	   22   	   25   	   64
+Fourth pass:
+
+Similarly, for fourth position traverse the rest of the array and find the fourth least element in the array
+As 25 is the 4th lowest value hence, it will place at the fourth position.
+   11   	   12   	   22   	   25   	   64
+Fifth Pass:
+
+At last the largest value present in the array automatically get placed at the last position in the array
+The resulted array is the sorted array.
+   11   	   12   	   22   	   25   	   64
+   Follow the below steps to solve the problem:
+
+   Initialize minimum value(min_idx) to location 0.
+   Traverse the array to find the minimum element in the array.
+   While traversing if any element smaller than min_idx is found then swap both the values.
+   Then, increment min_idx to point to the next element.
+   Repeat until the array is sorted.
+
+   ==========================================================================
+   Algorithm
+
+   The simple steps of achieving the insertion sort are listed as follows -
+
+   Step 1 - If the element is the first element, assume that it is already sorted. Return 1.
+
+   Step2 - Pick the next element, and store it separately in a key.
+
+   Step3 - Now, compare the key with all elements in the sorted array.
+
+   Step 4 - If the element in the sorted array is smaller than the current element, then move to the next element. Else, shift greater elements in the array towards the right.
+
+   Step 5 - Insert the value.
+
+   Step 6 - Repeat until the array is sorted.
+
+   Working of Insertion sort Algorithm
+   Now, let's see the working of the insertion sort Algorithm.
+
+   To understand the working of the insertion sort algorithm, let's take an unsorted array. It will be easier to understand the insertion sort via an example.
+
+   Let the elements of array are -
+
+   Insertion Sort Algorithm
+   Initially, the first two elements are compared in insertion sort.
+
+   Insertion Sort Algorithm
+   Here, 31 is greater than 12. That means both elements are already in ascending order. So, for now, 12 is stored in a sorted sub-array.
+   AD
+
+   Insertion Sort Algorithm
+   Now, move to the next two elements and compare them.
+
+   Insertion Sort Algorithm
+   Here, 25 is smaller than 31. So, 31 is not at correct position. Now, swap 31 with 25. Along with swapping, insertion sort will also check it with all elements in the sorted array.
+
+   For now, the sorted array has only one element, i.e. 12. So, 25 is greater than 12. Hence, the sorted array remains sorted after swapping.
+
+   Insertion Sort Algorithm
+   Now, two elements in the sorted array are 12 and 25. Move forward to the next elements that are 31 and 8.
+
+   Insertion Sort Algorithm
+   Both 31 and 8 are not sorted. So, swap them.
+   AD
+
+   Insertion Sort Algorithm
+   After swapping, elements 25 and 8 are unsorted.
+
+   Insertion Sort Algorithm
+   So, swap them.
+
+   Insertion Sort Algorithm
+   Now, elements 12 and 8 are unsorted.
+
+   Insertion Sort Algorithm
+   So, swap them too.
+
+   Insertion Sort Algorithm
+   Now, the sorted array has three items that are 8, 12 and 25. Move to the next items that are 31 and 32.
+
+   Insertion Sort Algorithm
+   Hence, they are already sorted. Now, the sorted array includes 8, 12, 25 and 31.
+
+   Insertion Sort Algorithm
+   Move to the next elements that are 32 and 17.
+
+   Insertion Sort Algorithm
+   17 is smaller than 32. So, swap them.
+
+   Insertion Sort Algorithm
+   Swapping makes 31 and 17 unsorted. So, swap them too.
+
+   Insertion Sort Algorithm
+   Now, swapping makes 25 and 17 unsorted. So, perform swapping again.
+
+   Insertion Sort Algorithm
+   Now, the array is completely sorted.
+
+   Insertion sort complexity
+   Now, let's see the time complexity of insertion sort in best case, average case, and in worst case. We will also see the space complexity of insertion sort.
+
+   1. Time Complexity
+   Case	Time Complexity
+   Best Case
+   O(n)
+   Average Case
+   O(n2)
+   Worst Case
+   O(n2)
+   Best Case Complexity - It occurs when there is no sorting required, i.e. the array is already sorted. The best-case time complexity of insertion sort is O(n).
+   Average Case Complexity - It occurs when the array elements are in jumbled order that is not properly ascending and not properly descending. The average case time complexity of insertion sort is O(n2).
+   Worst Case Complexity - It occurs when the array elements are required to be sorted in reverse order. That means suppose you have to sort the array elements in ascending order, but its elements are in descending order. The worst-case time complexity of insertion sort is O(n2).
+   AD
+   2. Space Complexity
+   Space Complexity
+   O(1)
+   Stable
+   YES
+   The space complexity of insertion sort is O(1). It is because, in insertion sort, an extra variable is required for swapping.
+   =====================================================================================
+   Merge Sort Algorithm
+   One thing that you might wonder is what is the specialty of this algorithm. We already have a number of sorting algorithms then why do we need this algorithm? One of the main advantages of merge sort is that it has a time complexity of O(n log n), which means it can sort large arrays relatively quickly. It is also a stable sort, which means that the order of elements with equal values is preserved during the sort.
+   Algorithm:
+   step 1: start
+
+   step 2: declare array and left, right, mid variable
+
+   step 3: perform merge function.
+       if left > right
+           return
+       mid= (left+right)/2
+       mergesort(array, left, mid)
+       mergesort(array, mid+1, right)
+       merge(array, left, mid, right)
+
+   step 4: Stop
+
+   Follow the steps below to solve the problem:
+
+   MergeSort(arr[], l,  r)
+   If r > l
+
+   Find the middle point to divide the array into two halves:
+   middle m = l + (r – l)/2
+   Call mergeSort for first half:
+   Call mergeSort(arr, l, m)
+   Call mergeSort for second half:
+   Call mergeSort(arr, m + 1, r)
+   Merge the two halves sorted in steps 2 and 3:
+   Call merge(arr, l, m, r)
