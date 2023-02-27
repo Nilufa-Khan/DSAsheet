@@ -1,4 +1,4 @@
-package array.search;
+package array.search.bs;
 //Iterative approach
 public class BinarySearch {
     public static void main(String[] args) {
