@@ -1,4 +1,4 @@
-package array.search;
+package array.search.bs;
 
 public class FindTotalNoOfOccurrence {
     public static void main(String[] args) {
