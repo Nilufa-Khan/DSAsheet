@@ -9,6 +9,7 @@ public class BinarySearch {
     if (index == -1){
         System.out.println("Element not found");
     }else{
+
         System.out.println("index of key element  = " + index);
     }
     }
