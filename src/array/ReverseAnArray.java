@@ -7,6 +7,7 @@ import java.util.Vector;
 
 public class ReverseAnArray {
     public static void main(String[] args) {
+
         Vector<Integer> integerVector = new Vector<>();
         integerVector.add(10);
         integerVector.add(12);
