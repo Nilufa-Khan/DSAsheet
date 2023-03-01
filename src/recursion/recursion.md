@@ -1,0 +1,1 @@
+When a function call itself called recursion
