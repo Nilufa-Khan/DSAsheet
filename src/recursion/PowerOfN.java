@@ -8,7 +8,12 @@ public class PowerOfN {
         System.out.println("Power of "+ number +" ^ " + power +" = "+ result);
     }
     public static int powerOfN(int number, int power){
-        int result = number * powerOfN(number,power);
-        return 0;
+        if(power==0){
+            return 1;
+        }else{
+           return (number * powerOfN(number,power-1));
+        }
+
+
     }
 }
