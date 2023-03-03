@@ -9,8 +9,9 @@ public class Printing {
         if(number == 0){
             return;
         }else{
-            System.out.print(number + " ");
             printNumber(number -1);
+            System.out.print(number + " ");
+
         }
     }
 }
