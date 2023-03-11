@@ -3,7 +3,7 @@ package recursion;
 public class CheckPalindromeUsingRecursion {
     public static void main(String[] args) {
         String str = "Rabar";
-        boolean isPalindrome = chekPalindrome(str,0,str.length()-1);
+        boolean isPalindrome = checkPalindrome(str,0,str.length()-1);
         if(isPalindrome){
             System.out.println("This is a palindrome");
         }else{
@@ -11,7 +11,7 @@ public class CheckPalindromeUsingRecursion {
         }
 
     }
-    public static boolean chekPalindrome(String str, int i , int j){
+    public static boolean checkPalindrome(String str, int i , int j){
         if(i > j){
             return true;
         }
@@ -19,7 +19,7 @@ public class CheckPalindromeUsingRecursion {
             return false;
         }
         else {
-            return chekPalindrome(str, i+1,j-1);
+            return checkPalindrome(str, i+1,j-1);
         }
     }
 }
