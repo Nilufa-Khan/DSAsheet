@@ -3,8 +3,6 @@ package array;
 import java.util.Collections;
 import java.util.Vector;
 
-
-
 public class ReverseAnArray {
 
     public static void main(String[] args) {
@@ -21,6 +19,7 @@ public class ReverseAnArray {
         System.out.println("Reverse array ");
         System.out.println(ans);
     }
+
     public static Vector<Integer> reverseArray(Vector<Integer> vector){
         int start = 0;
         int end = vector.size()-1;
