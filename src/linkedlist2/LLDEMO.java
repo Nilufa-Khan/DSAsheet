@@ -47,6 +47,7 @@ public class LLDEMO {
         }
         Node nodeToInsert = new Node(data);
         nodeToInsert.next = temp.next;
+
         temp.next = nodeToInsert;
         // updating last element as a tail in linked list
         // without below snippet code runs fine
