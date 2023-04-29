@@ -12,6 +12,9 @@ public class SinglyLinkedList {
         this.size = 0;
     }
 
+    public void insertFirst(int value){
+
+    }
     private class Node{
         private int value;
         private Node next;

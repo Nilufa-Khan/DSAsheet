@@ -1,7 +1,8 @@
 package recursion;
 
 public class BinarySearch {
-    public static void main(String[] args) {
+    public static void main(String
+    [] args) {
         int[] arr= {23,45,67,88,99,789};
         int index = binarySearch(arr,0,arr.length-1,67);
         if(index == -1){
