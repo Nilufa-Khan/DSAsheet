@@ -5,7 +5,7 @@ import java.util.LinkedList;
 public class LLDEMO {
     Node head;
     Node tail;
-    class Node{
+    public static class Node{
         int data;
         Node next;
         Node(int data){
@@ -56,6 +56,30 @@ public class LLDEMO {
 //            return;
 //        }
     }
+    // delete at specific position
+    void deleteNode(int position, Node head){
+    // deleting first or start node
+        if(position == 1){
+            Node temp = head;
+            head = head.next;
+            temp.next = null;
+
+        }
+        else {
+            // deleting any middle or last node
+            Node currNode = head;
+            Node prevNode = null;
+            int count = 1;
+            while (count < position){
+                prevNode = currNode;
+                currNode = currNode.next;
+                count++;
+            }
+            prevNode.next = currNode.next;
+            currNode.next = null;
+
+        }
+    }
     // print list
     public void printList(){
         Node temp = head;
@@ -66,6 +90,7 @@ public class LLDEMO {
         System.out.println();
     }
     public static void main(String[] args) {
+
         LLDEMO lldemo = new LLDEMO();
         lldemo.insertAtHead(12);
         lldemo.insertAtHead(10);
@@ -76,7 +101,7 @@ public class LLDEMO {
         lldemo.insertAtTail(45);
         lldemo.printList();
         System.out.println("Insert at specific position");
-        lldemo.insertAtPosition(6,22);
+        lldemo.insertAtPosition(3,22);
         lldemo.printList();
         System.out.println("Head ==>> "+ lldemo.head.data);
        Node temp = lldemo.head;
@@ -85,5 +110,8 @@ public class LLDEMO {
        }
         System.out.println("Tail ==>> "+ temp.data);
 
+        lldemo.deleteNode(1,lldemo.head);
+        lldemo.printList();
     }
+
 }
